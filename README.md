@@ -386,7 +386,7 @@ Todas as migrations estão em `database/migrations/` e incluem:
 
 ## 👨‍💻 Autor
 
-Projeto desenvolvido como trabalho de pós-graduação em Sistemas Distribuídos.
+Everton Reis
 
 ## 📄 Licença
 
@@ -431,4 +431,4 @@ php artisan jwt:secret
 
 **🎓 Trabalho de Pós-Graduação - Sistemas Distribuídos**
 
-**📅 Outubro 2024**
+**📅 Novembro 2025**
