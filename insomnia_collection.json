@@ -1,0 +1,412 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-10-27T23:55:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_online_courses",
+      "_type": "workspace",
+      "name": "Sistema de Gestão de Cursos Online",
+      "description": "API Laravel 11 - Trabalho Pós-Graduação",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_base",
+      "_type": "environment",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://127.0.0.1:8000/api",
+        "token": ""
+      },
+      "parentId": "wrk_online_courses"
+    },
+    {
+      "_id": "req_login",
+      "_type": "request",
+      "name": "1. Login (Obter Token)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"password123\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "description": "Login e obtenção do token JWT.\n\n✅ Depois de fazer login, COPIE o token do campo 'access_token' e cole na variável de ambiente 'token'.\n\nCredenciais:\n- Email: admin@example.com\n- Senha: password123",
+      "parentId": "fld_auth"
+    },
+    {
+      "_id": "req_me",
+      "_type": "request",
+      "name": "2. Obter Usuário Logado",
+      "method": "GET",
+      "url": "{{ _.base_url }}/me",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Retorna os dados do usuário autenticado.",
+      "parentId": "fld_auth"
+    },
+    {
+      "_id": "req_refresh",
+      "_type": "request",
+      "name": "3. Refresh Token",
+      "method": "POST",
+      "url": "{{ _.base_url }}/refresh",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Renova o token JWT.",
+      "parentId": "fld_auth"
+    },
+    {
+      "_id": "req_logout",
+      "_type": "request",
+      "name": "4. Logout",
+      "method": "POST",
+      "url": "{{ _.base_url }}/logout",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Invalida o token JWT.",
+      "parentId": "fld_auth"
+    },
+    {
+      "_id": "req_courses_list",
+      "_type": "request",
+      "name": "1. Listar Todos os Cursos",
+      "method": "GET",
+      "url": "{{ _.base_url }}/courses",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Lista todos os cursos com paginação.\n\nRetorna:\n- Lista de cursos\n- Metadados de paginação\n- Relacionamentos com categoria",
+      "parentId": "fld_courses"
+    },
+    {
+      "_id": "req_courses_show",
+      "_type": "request",
+      "name": "2. Ver Curso Específico",
+      "method": "GET",
+      "url": "{{ _.base_url }}/courses/1",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Visualiza os detalhes de um curso específico.\n\n⚠️ Altere o ID (1) na URL para ver outros cursos.",
+      "parentId": "fld_courses"
+    },
+    {
+      "_id": "req_courses_create",
+      "_type": "request",
+      "name": "3. Criar Novo Curso",
+      "method": "POST",
+      "url": "{{ _.base_url }}/courses",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Curso de Teste via API\",\n  \"description\": \"Este é um curso criado através da API para teste\",\n  \"category_id\": 1,\n  \"instructor\": \"Professor Teste\",\n  \"duration_hours\": 40,\n  \"price\": 199.90,\n  \"level\": \"intermediary\",\n  \"is_published\": true\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Cria um novo curso.\n\nCampos obrigatórios:\n- title (string)\n- description (string)\n- category_id (integer)\n- instructor (string)\n- duration_hours (integer)\n- price (decimal)\n- level (beginner|intermediary|advanced)",
+      "parentId": "fld_courses"
+    },
+    {
+      "_id": "req_courses_update",
+      "_type": "request",
+      "name": "4. Atualizar Curso",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/courses/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Curso Atualizado via API\",\n  \"description\": \"Descrição atualizada do curso\",\n  \"category_id\": 1,\n  \"instructor\": \"Professor Atualizado\",\n  \"duration_hours\": 50,\n  \"price\": 249.90,\n  \"level\": \"advanced\",\n  \"is_published\": true\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Atualiza um curso existente.\n\n⚠️ Altere o ID (1) na URL para atualizar outro curso.",
+      "parentId": "fld_courses"
+    },
+    {
+      "_id": "req_courses_delete",
+      "_type": "request",
+      "name": "5. Deletar Curso",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/courses/1",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Deleta um curso (soft delete).\n\n⚠️ CUIDADO: Esta ação remove o curso!\n⚠️ Altere o ID (1) na URL para deletar outro curso.",
+      "parentId": "fld_courses"
+    },
+    {
+      "_id": "req_lessons_list",
+      "_type": "request",
+      "name": "1. Listar Lições de um Curso",
+      "method": "GET",
+      "url": "{{ _.base_url }}/courses/1/lessons",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Lista todas as lições de um curso específico.\n\n⚠️ Altere o course_id (1) na URL para ver lições de outros cursos.",
+      "parentId": "fld_lessons"
+    },
+    {
+      "_id": "req_lessons_show",
+      "_type": "request",
+      "name": "2. Ver Lição Específica",
+      "method": "GET",
+      "url": "{{ _.base_url }}/courses/1/lessons/1",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Visualiza os detalhes de uma lição específica.\n\n⚠️ Altere os IDs na URL (course_id/lesson_id).",
+      "parentId": "fld_lessons"
+    },
+    {
+      "_id": "req_lessons_create",
+      "_type": "request",
+      "name": "3. Criar Nova Lição",
+      "method": "POST",
+      "url": "{{ _.base_url }}/courses/1/lessons",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Nova Lição de Teste\",\n  \"description\": \"Esta é uma lição criada através da API\",\n  \"content\": \"Conteúdo completo da lição com explicações detalhadas...\",\n  \"video_url\": \"https://www.youtube.com/watch?v=exemplo123\",\n  \"duration_minutes\": 45,\n  \"is_free\": false\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Cria uma nova lição em um curso.\n\nCampos obrigatórios:\n- title (string)\n- content (string)\n- duration_minutes (integer)\n\nCampos opcionais:\n- description\n- video_url\n- is_free (boolean)",
+      "parentId": "fld_lessons"
+    },
+    {
+      "_id": "req_lessons_update",
+      "_type": "request",
+      "name": "4. Atualizar Lição",
+      "method": "PUT",
+      "url": "{{ _.base_url }}/courses/1/lessons/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Lição Atualizada via API\",\n  \"description\": \"Descrição atualizada da lição\",\n  \"content\": \"Conteúdo atualizado com mais informações...\",\n  \"video_url\": \"https://www.youtube.com/watch?v=atualizado456\",\n  \"duration_minutes\": 60,\n  \"is_free\": true\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Atualiza uma lição existente.\n\n⚠️ Altere os IDs na URL (course_id/lesson_id).",
+      "parentId": "fld_lessons"
+    },
+    {
+      "_id": "req_lessons_delete",
+      "_type": "request",
+      "name": "5. Deletar Lição",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/courses/1/lessons/1",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Deleta uma lição (soft delete).\n\n⚠️ CUIDADO: Esta ação remove a lição!\n⚠️ Altere os IDs na URL (course_id/lesson_id).",
+      "parentId": "fld_lessons"
+    },
+    {
+      "_id": "req_test_validation_error",
+      "_type": "request",
+      "name": "Teste: Erro de Validação",
+      "method": "POST",
+      "url": "{{ _.base_url }}/courses",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"\",\n  \"description\": \"Teste\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Testa a validação de campos obrigatórios.\n\n✅ Deve retornar erro 422 com mensagens em português.",
+      "parentId": "fld_tests"
+    },
+    {
+      "_id": "req_test_unauthorized",
+      "_type": "request",
+      "name": "Teste: Acesso Não Autorizado",
+      "method": "GET",
+      "url": "{{ _.base_url }}/courses",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Testa acesso sem token JWT.\n\n✅ Deve retornar erro 401 (Unauthorized).",
+      "parentId": "fld_tests"
+    },
+    {
+      "_id": "req_test_not_found",
+      "_type": "request",
+      "name": "Teste: Recurso Não Encontrado",
+      "method": "GET",
+      "url": "{{ _.base_url }}/courses/99999",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.token }}"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "description": "Testa busca de curso inexistente.\n\n✅ Deve retornar erro 404 (Not Found).",
+      "parentId": "fld_tests"
+    },
+    {
+      "_id": "fld_auth",
+      "_type": "request_group",
+      "name": "🔐 Autenticação (JWT)",
+      "description": "Endpoints de autenticação com JWT",
+      "parentId": "wrk_online_courses"
+    },
+    {
+      "_id": "fld_courses",
+      "_type": "request_group",
+      "name": "📚 Courses (CRUD Completo)",
+      "description": "Gerenciamento completo de cursos",
+      "parentId": "wrk_online_courses"
+    },
+    {
+      "_id": "fld_lessons",
+      "_type": "request_group",
+      "name": "📝 Lessons (CRUD Completo)",
+      "description": "Gerenciamento completo de lições",
+      "parentId": "wrk_online_courses"
+    },
+    {
+      "_id": "fld_tests",
+      "_type": "request_group",
+      "name": "🧪 Testes de Validação",
+      "description": "Testes de erros e validações",
+      "parentId": "wrk_online_courses"
+    }
+  ]
+}

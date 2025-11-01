@@ -1,0 +1,226 @@
+{
+  "generated_at": "2025-11-01T13:59:29.670548",
+  "total_courses": 20,
+  "courses": [
+    {
+      "id": 6,
+      "title": "Aut error ipsum vel voluptas quam nesciunt esse. - Business & Marketing",
+      "slug": "aut-error-ipsum-vel-voluptas-quam-nesciunt-esse-6",
+      "price": "38.88",
+      "duration_hours": 77,
+      "is_published": 0,
+      "category_name": "Business & Marketing",
+      "total_students": 5,
+      "total_lessons": 9
+    },
+    {
+      "id": 5,
+      "title": "Excepturi consequatur dolores quam. - Web Development",
+      "slug": "excepturi-consequatur-dolores-quam-5",
+      "price": "108.35",
+      "duration_hours": 39,
+      "is_published": 1,
+      "category_name": "Web Development",
+      "total_students": 5,
+      "total_lessons": 9
+    },
+    {
+      "id": 13,
+      "title": "Sed dolores quaerat qui vero dignissimos. - Design & UX",
+      "slug": "sed-dolores-quaerat-qui-vero-dignissimos-13",
+      "price": "91.75",
+      "duration_hours": 64,
+      "is_published": 0,
+      "category_name": "Design & UX",
+      "total_students": 5,
+      "total_lessons": 12
+    },
+    {
+      "id": 9,
+      "title": "Temporibus ad ipsa. - Data Science",
+      "slug": "temporibus-ad-ipsa-9",
+      "price": "197.96",
+      "duration_hours": 21,
+      "is_published": 1,
+      "category_name": "Data Science",
+      "total_students": 5,
+      "total_lessons": 7
+    },
+    {
+      "id": 8,
+      "title": "Consequatur in adipisci. - Data Science",
+      "slug": "consequatur-in-adipisci-8",
+      "price": "196.49",
+      "duration_hours": 17,
+      "is_published": 0,
+      "category_name": "Data Science",
+      "total_students": 4,
+      "total_lessons": 12
+    },
+    {
+      "id": 15,
+      "title": "Et eum et esse omnis sit et. - Web Development",
+      "slug": "et-eum-et-esse-omnis-sit-et-15",
+      "price": "38.49",
+      "duration_hours": 47,
+      "is_published": 0,
+      "category_name": "Web Development",
+      "total_students": 4,
+      "total_lessons": 9
+    },
+    {
+      "id": 12,
+      "title": "Magnam libero rerum id odio voluptates modi. - Mobile Development",
+      "slug": "magnam-libero-rerum-id-odio-voluptates-modi-12",
+      "price": "0.00",
+      "duration_hours": 82,
+      "is_published": 0,
+      "category_name": "Mobile Development",
+      "total_students": 4,
+      "total_lessons": 9
+    },
+    {
+      "id": 18,
+      "title": "Sint fugiat iste sed maxime assumenda consequuntur dolor. - Web Development",
+      "slug": "sint-fugiat-iste-sed-maxime-assumenda-consequuntur-dolor-18",
+      "price": "174.79",
+      "duration_hours": 105,
+      "is_published": 1,
+      "category_name": "Web Development",
+      "total_students": 4,
+      "total_lessons": 10
+    },
+    {
+      "id": 4,
+      "title": "Voluptatem quis unde sint quas. - Data Science",
+      "slug": "voluptatem-quis-unde-sint-quas-4",
+      "price": "0.00",
+      "duration_hours": 75,
+      "is_published": 0,
+      "category_name": "Data Science",
+      "total_students": 4,
+      "total_lessons": 8
+    },
+    {
+      "id": 20,
+      "title": "Autem magnam consectetur odit. - Business & Marketing",
+      "slug": "autem-magnam-consectetur-odit-20",
+      "price": "118.98",
+      "duration_hours": 120,
+      "is_published": 0,
+      "category_name": "Business & Marketing",
+      "total_students": 3,
+      "total_lessons": 10
+    },
+    {
+      "id": 2,
+      "title": "Commodi incidunt et ut odit qui. - Design & UX",
+      "slug": "commodi-incidunt-et-ut-odit-qui-2",
+      "price": "0.00",
+      "duration_hours": 108,
+      "is_published": 0,
+      "category_name": "Design & UX",
+      "total_students": 3,
+      "total_lessons": 5
+    },
+    {
+      "id": 7,
+      "title": "Et vero quos rerum. - Design & UX",
+      "slug": "et-vero-quos-rerum-7",
+      "price": "95.49",
+      "duration_hours": 88,
+      "is_published": 1,
+      "category_name": "Design & UX",
+      "total_students": 3,
+      "total_lessons": 6
+    },
+    {
+      "id": 3,
+      "title": "Illo libero error ut. - Data Science",
+      "slug": "illo-libero-error-ut-3",
+      "price": "0.00",
+      "duration_hours": 103,
+      "is_published": 0,
+      "category_name": "Data Science",
+      "total_students": 3,
+      "total_lessons": 9
+    },
+    {
+      "id": 16,
+      "title": "Libero qui officiis qui pariatur. - Web Development",
+      "slug": "libero-qui-officiis-qui-pariatur-16",
+      "price": "0.00",
+      "duration_hours": 100,
+      "is_published": 0,
+      "category_name": "Web Development",
+      "total_students": 3,
+      "total_lessons": 5
+    },
+    {
+      "id": 11,
+      "title": "Et repellendus est cum. - Web Development",
+      "slug": "et-repellendus-est-cum-11",
+      "price": "185.00",
+      "duration_hours": 96,
+      "is_published": 0,
+      "category_name": "Web Development",
+      "total_students": 2,
+      "total_lessons": 8
+    },
+    {
+      "id": 17,
+      "title": "Harum est laboriosam sit libero labore. - Web Development",
+      "slug": "harum-est-laboriosam-sit-libero-labore-17",
+      "price": "92.16",
+      "duration_hours": 15,
+      "is_published": 0,
+      "category_name": "Web Development",
+      "total_students": 2,
+      "total_lessons": 8
+    },
+    {
+      "id": 10,
+      "title": "Quia ut illum placeat quo sed. - Business & Marketing",
+      "slug": "quia-ut-illum-placeat-quo-sed-10",
+      "price": "134.84",
+      "duration_hours": 18,
+      "is_published": 0,
+      "category_name": "Business & Marketing",
+      "total_students": 2,
+      "total_lessons": 8
+    },
+    {
+      "id": 19,
+      "title": "Suscipit ea et nihil. - Design & UX",
+      "slug": "suscipit-ea-et-nihil-19",
+      "price": "0.00",
+      "duration_hours": 116,
+      "is_published": 1,
+      "category_name": "Design & UX",
+      "total_students": 2,
+      "total_lessons": 11
+    },
+    {
+      "id": 14,
+      "title": "Dolores recusandae magni odio dicta aspernatur. - Data Science",
+      "slug": "dolores-recusandae-magni-odio-dicta-aspernatur-14",
+      "price": "0.00",
+      "duration_hours": 102,
+      "is_published": 0,
+      "category_name": "Data Science",
+      "total_students": 1,
+      "total_lessons": 5
+    },
+    {
+      "id": 21,
+      "title": "Laravel 11 Complete Guide",
+      "slug": "laravel-11-complete-guide",
+      "price": "199.99",
+      "duration_hours": 50,
+      "is_published": 1,
+      "category_name": "Web Development",
+      "total_students": 0,
+      "total_lessons": 0
+    }
+  ]
+}
